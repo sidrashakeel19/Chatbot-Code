@@ -11,7 +11,7 @@ var students = [
     {id: 2, name: "Zain"},
     {id: 3, name: "Zayyan"},
     {id: 4, name: "Shakeel"}
-]
+];
 //GET is used for fetching data
 app.get("/", function(req,res) {
     console.log("Student list Fetch");
@@ -20,11 +20,11 @@ app.get("/", function(req,res) {
 
 app.get("/home", function(req,res) {
     console.log("The basic request is call");
-    res.send("home")
+    res.send("Hello from the basic home function")
 });
 
 app.get("/arrow", function(req,res) {
-    res.send("Hello from arrow function")
+    res.send("Hello from the basic arrow function")
 });
 
 app.post("/student", (req,res)=>{
@@ -33,17 +33,26 @@ app.post("/student", (req,res)=>{
         name: req.body.name
     }
     students.push(student)
-    console.log("The current students are" + $(students.length))
+    console.log('The current students are ${students.length}')
     res.send("The student is added");
-});
+})
 //update
 app.put("/student/:id", (req,res)=>{
-   var student = students.find(s => s.id === req.params.id)
+   var student = students.find(s => s.id === parseInt(req.params.id))
    student.name = req.body.name 
-   console.log(req.params.id);
-   res.send("Record is updated")
-});
+   res.send("Record is updated.")
+   //console.log(req.params.id);
+   //res.send("Record is updated")
+})
 
-app.listen(5000, function() {
-    console.log("The server is up on port 5000")
+//delete
+app.delete("/student/:id",(req,res)=>{
+    var student = students.find(s => s.id === parseInt(req.params.id))
+    var index = students.indexOf(student);
+    students.splice(index,1)
+    res,send("Record is deleted")
+})
+
+app.listen(8080, function() {
+    console.log("The server is up on port 8080")
 })
