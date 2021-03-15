@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost/DemoTest02',
     useUnifiedTopology: true
 });
 const express = require('express');
-const { Console } = require('node:console');
+//const { Console } = require('node:console');
 const app =express()
 app.use(express.json());
 
@@ -40,5 +40,5 @@ app.delete('/student/:id', (req,res) => {
 })
 
 app.listen(5000, () => {
-    Console.log("Server")
+    console.log("Server")
 })
