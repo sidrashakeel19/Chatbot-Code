@@ -40,5 +40,5 @@ app.delete('/student/:id', (req,res) => {
 })
 
 app.listen(5000, () => {
-    console.log("Server")
+    console.log("Server is up on port 5000")
 })
