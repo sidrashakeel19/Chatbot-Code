@@ -1,13 +1,17 @@
-const mongoose = require("./db")
+const mongoose = require("../db")
 const schema = new mongoose.Schema(
     {
-        email: String,
+        email: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         password: String,
         name: String,
         age: Number,
         gender: String,
         isActive: Boolean,
-        userType: "Admin",
+        userType: String,
         //more detailed
         // userType: {
         //     desc: "UserRoles",
