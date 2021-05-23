@@ -1,7 +1,7 @@
 {
   "name": "code04",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chatbot using Node.js, Dialogflow, Ngrok and Express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
