@@ -1,7 +1,7 @@
 {
   "name": "code02",
   "version": "1.0.0",
-  "description": "Express server using MongoDB, MVC and seperate routes",
+  "description": "Express server using Node.js, MongoDB, MVC and seperate routes",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
